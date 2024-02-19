@@ -1,0 +1,87 @@
+<html>
+    
+    <head>
+        <title></title>
+        <meta name="description" content="Boxes.">
+        <link rel="stylesheet" href="main.css">
+  
+    </head>
+    <style>
+  
+    #container div{
+        height: 100px;
+        width:100px;
+        background-color: red;
+        float:left;
+        border: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        text-align: center;
+        }
+        
+         
+</style>
+    
+<body> 
+      <input type="text" placeholder="Enter Numbers" name="number" 
+        id="number" required><br>
+    <input type ="submit" onClick="Boxes()"/> 
+     
+     <div id="container">
+     </div>
+    
+    <script type="text/javascript" src="lib.js"></script>
+    
+    <script>
+    
+        function Boxes() 
+        {
+        
+        var container = document.getElementById("container")
+        while( container.children.length > 0){
+            container.removeChild(container.firstElementChild);
+        }
+        var container = document.getElementById("container")
+         var size = document.getElementById("number").value;
+         for (var i = 0; i < size; i++){
+             var box = document.createElement("div");
+
+             box.innerText = i+1;
+             
+             
+             container.appendChild(box);
+         }
+        
+        }
+    
+ 
+    </script>
+    <script>
+    
+    function randColour() {
+    var Char;
+             var hash;
+             Char ="0123456789ABCDEF"; 
+             hash="#";
+             for (var i = 0; i < 6:i++){
+             var colour = hash + Char[Math.floor(Math.random() * 16)];
+             }
+             
+     </script>
+
+
+
+
+   
+    
+   
+    
+
+        
+        
+    
+    
+    
+    
+ 
+    

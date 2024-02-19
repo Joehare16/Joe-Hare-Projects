@@ -1,0 +1,169 @@
+<html>
+    
+    <head>
+        <title>Gym Registration Form</title>
+        <meta name="description" content="A registration form for a gym.">
+        <link rel="stylesheet" href="main.css">
+        <script src="js/jquery.js"></script>
+  
+    </head>
+    <style>
+       
+    table{
+    border: collapse;
+    width: 100%;
+    border: none;
+}
+        }
+        
+    th,td{
+    text-align: left;
+    padding-right: 10px;
+    border-right: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+        }  
+   
+    th{
+     background: #d3d3d3;
+        }
+    
+     tr:nth-child(even) {
+         background: #dddddd;
+
+        }
+        
+    </style>   
+    <body>
+        
+       
+         <div class = "container">
+            <div class ="title">
+            Gym Registration Form
+            </div>
+        <form action ="">
+        <div class ="form">
+            
+            
+            <label for = "fullname"><b>Fullname</b></label><br/>
+            <input type="text" placeholder="Enter Full Name" name="fullname" 
+            id="fullname"><br/>
+           
+            
+            
+            <label for = "age"><b>Age</b></label><br/>
+            <input type="number" placeholder="Enter Age" name="age" id ="age" ><br/>
+            
+            
+            
+            <label for ="height"><b>Height</b></label>
+            <select  height= "feet" id="feet">
+            <option placeholder ="Feet">Feet</option>
+            <option value ="4">4</option>
+            <option value ="5">5</option>
+            <option value ="6">6</option>
+            </select>
+            <select height= "inches" id="inches">
+            <option value ="Inches">Inches</option>
+            <option value ="1">1</option>
+            <option value ="2">2</option>
+            <option value ="3">3</option>
+            <option value ="4">4</option>
+            <option value ="5">5</option>
+            <option value ="6">6</option>
+            <option value ="7">7</option>
+            <option value ="8">8</option>
+            <option value ="9">9</option>
+            <option value ="1">10</option>
+            <option value ="2">11</option>
+            </select><br/>
+           
+            
+            
+            <label for = "StartDate"><b>Start Date</b></label>
+            <input type = "date" name="date" id="date">
+            <br />
+             
+            
+            
+            <input type = "button" value ="Register" onClick="addRow()">
+            
+            
+            <button type ="input" id="Reset Info">Reset Information</button>
+            
+            <Script>
+            var Registered = 0;
+            function addRow() 
+            
+            {
+   
+            inpAge = document.getElementById("age").value;
+            age = parseInt(inpAge);
+                if( isNaN(inpAge) || age< 18 || age>70){
+                alert( inpAge + "is not a valid age.")
+                }
+            
+            inpDate = document.getElementById("date").value;
+            year = parseInt(inpDate[6]);
+            if (year != 3 ){
+                alert(inpDate+ " is invalid, start date must be in 2023")
+            }
+              
+            
+            else{
+            Registered = Registered +1;
+            document.getElementById("members").innerHTML = Registered;
+                
+            feet = document.getElementById("feet").value;
+            inches = document.getElementById("inches").value;
+            height = feet + "'" + inches;
+                
+            
+            var table = document.getElementById("table");
+            var row= table.insertRow();
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            var td3 = document.createElement("td");
+            var td4 = document.createElement("td");
+            var td5 = document.createElement("td");
+            
+
+            td1.innerHTML = document.getElementById("fullname").value;
+            td2.innerHTML  = document.getElementById("age").value;
+            td3.innerHTML  = height
+            td4.innerHTML = document.getElementById("date").value;
+            td5.innerHTML = 
+            
+
+            row.appendChild(td1);
+            row.appendChild(td2);
+            row.appendChild(td3);
+            row.appendChild(td4);   
+            
+
+            table.children[0].appendChild(row);
+            }
+            }
+           
+            </Script>   
+            
+    
+           
+            
+        
+            <h2>Registered Members</h2>
+            <p id = "members"></p>
+            <table id= "table">
+            <tr>
+            <th>Full Name</th>
+            <th>Age</th>
+            <th> Height</th>
+            <th>Start Date</th>
+            </tr>
+            </table>
+            
+         
+            
+            
+    
+        
+        
